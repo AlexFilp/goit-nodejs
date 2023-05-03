@@ -1,4 +1,3 @@
-// const argv = require("yargs").argv;
 const { Command } = require("commander");
 const contacts = require("./contacts");
 
@@ -46,27 +45,3 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 };
 
 invokeAction(argv);
-
-// SHOW ALL
-// invokeAction({ action: "list" });
-// invokeAction({ action: "get", id: "vza2RIzNGIwutCVCs4mCL" });
-
-// ADD
-// invokeAction({
-//   action: "add",
-//   name: "Alex Filp",
-//   email: "test@gmail.com",
-//   phone: "(501) 223-2356",
-// });
-
-// UPDATE
-// invokeAction({
-//   action: "update",
-//   id: "RAp11rGgcoejx9g7VQJr5",
-//   name: "Alex Filp",
-//   email: "test@gmail.com",
-//   phone: "(501) 777-7777",
-// });
-
-// REMOVE
-// invokeAction({ action: "remove", id: "rsKkOQUi80UsgVPCcLZZW" });
