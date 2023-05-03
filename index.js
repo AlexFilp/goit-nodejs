@@ -1,4 +1,4 @@
-// const argv = require("yargs").argv;
+const argv = require("yargs").argv;
 const contacts = require("./contacts");
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
@@ -27,8 +27,12 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
         phone
       );
       console.log(updatedContact);
+    default:
+      return console.log("Unknown action");
   }
 };
+
+invokeAction(argv);
 
 // SHOW ALL
 // invokeAction({ action: "list" });

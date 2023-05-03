@@ -6,12 +6,14 @@ const contactsPath = path.join(__dirname, "db/contacts.json");
 
 const listContacts = async () => {
   const contactsData = await fs.readFile(contactsPath);
+  console.log("Here are all your contacts!");
   return JSON.parse(contactsData);
 };
 
 const getContactById = async (contactId) => {
   const allContacts = await listContacts();
   const result = allContacts.find((contact) => contact.id === contactId);
+  console.log(`Here is the contact with id ${contactId}`);
   return result || null;
 };
 
@@ -20,6 +22,7 @@ const addContact = async (name, email, phone) => {
   const newContact = { id: nanoid(), name, email, phone };
   allContacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(allContacts, null, 2));
+  console.log("Added a new contact!");
   return newContact;
 };
 
@@ -31,6 +34,7 @@ const removeContact = async (contactId) => {
   }
   const [newContacts] = allContacts.splice(index, 1);
   await fs.writeFile(contactsPath, JSON.stringify(allContacts, null, 2));
+  console.log("You will never see this contact again!");
   return newContacts;
 };
 
