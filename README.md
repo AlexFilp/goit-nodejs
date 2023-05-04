@@ -1,4 +1,4 @@
-Here is the screenshots of commands.
+Here are the screenshots of commands.
 
 1. node index -a list ===> https://ibb.co/KqmyJ8Y
 
