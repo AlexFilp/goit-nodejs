@@ -31,10 +31,10 @@ const removeContact = async (contactId) => {
   if (index === -1) {
     return null;
   }
-  const [deletedContacts] = allContacts.splice(index, 1);
+  const [newContacts] = allContacts.splice(index, 1);
   await fs.writeFile(contactsPath, JSON.stringify(allContacts, null, 2));
   console.log("You will never see this contact again!");
-  return deletedContacts;
+  return newContacts;
 };
 
 const updateContact = async (id, name, email, phone) => {
